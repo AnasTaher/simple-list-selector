@@ -1,0 +1,195 @@
+/* ========== Base ========== */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f6fa;
+    color: #333;
+  }
+  
+  header {
+    background: #4a90e2;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 1rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  /* ========== Controls ========== */
+  .controls {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .controls button,
+  .controls select,
+  .controls input[type="file"] {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .controls button:hover {
+    background: #eee;
+  }
+  
+  /* ========== Add/Edit Form ========== */
+  #item-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    padding: 0.8rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  #item-form.hidden {
+    display: none;
+  }
+  
+  #item-form input {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #item-form button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #item-form button[type="submit"] {
+    background: #4a90e2;
+    color: white;
+  }
+  
+  #item-form button#cancel-form {
+    background: #ccc;
+    color: black;
+  }
+  
+  /* ========== List ========== */
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .list li {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto; /* drag handle | number | fields | remove button */
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    margin-bottom: 0.4rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .list li:active {
+    cursor: grabbing;
+  }
+  
+  .list li.dragging {
+    opacity: 0.6;
+    background: #d9ecff;
+  }
+  
+  /* ========== Item Content ========== */
+/* Number column */
+.item-number {
+    cursor: pointer;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: right;
+  }
+  
+
+/* Fields container as grid for column alignment */
+.item-fields {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(100px, 1fr);
+    border-left: 1px solid #ddd; /* divider before fields */
+  }
+  
+  /* Each field cell */
+  .item-field {
+    padding: 0.2rem 0.6rem;
+    border-left: 1px solid #ddd; /* divider between fields */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  /* First field should not have a divider */
+  .item-field:first-child {
+    border-left: none;
+  }
+  
+  /* Hover effect for fields */
+  .item-field:hover {
+    background: #f0f0f0;
+  }
+  
+  
+  /* ========== Remove Button ========== */
+
+/* Remove button */
+.remove-btn {
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  
+  .remove-btn:hover {
+    background: #e33b3d;
+  }
+ /* ========== Drag Handle ========== */
+ .drag-handle {
+    cursor: grab;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    user-select: none;
+    color: #888;
+  }
+  
+  .drag-handle:active {
+    cursor: grabbing;
+    color: #555;
+  }
+  
+  

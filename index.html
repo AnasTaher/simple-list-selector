@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranked List App</title>
+  <link rel="stylesheet" href="style/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Ranked List</h1>
+  </header>
+
+  <main>
+<!-- Controls -->
+<div class="controls">
+    <button id="add-item">Add Item</button>
+    <input type="file" id="import-csv" accept=".csv" />
+    <select id="layout-select">
+      <option value="1">1 Column</option>
+      <option value="2">2 Columns</option>
+      <option value="3">3 Columns</option>
+    </select>
+  </div>
+  
+  <!-- Add Item Form -->
+  <form id="item-form" class="hidden">
+    <div id="item-form-fields"></div>
+    <button type="submit">Save</button>
+    <button type="button" id="cancel-form">Cancel</button>
+  </form>
+  
+
+    <!-- List Container -->
+    <ul id="ranked-list" class="list columns-1">
+      <!-- Example static item -->
+    </ul>
+  </main>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
