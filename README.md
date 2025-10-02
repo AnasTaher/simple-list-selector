@@ -27,14 +27,6 @@ Built with HTML, CSS, and JavaScript, and designed with the help of AI (ChatGPT)
 
 ---
 
-## Hosting on GitHub Pages
-
-1. Push your project to GitHub.
-2. In your repository settings → Pages → set source branch to `main` and folder to `/ (root)`.
-3. Save and visit the generated link.
-
----
-
 ## Built With
 
 - HTML, CSS, JavaScript  
