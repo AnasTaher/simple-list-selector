@@ -6,7 +6,7 @@ const importCSV = document.getElementById("import-csv");
 const itemForm = document.getElementById("item-form");
 const itemFormFields = document.getElementById("item-form-fields");
 const cancelFormBtn = document.getElementById("cancel-form");
-
+const exportBtn = document.getElementById("exportBtn");
 let counter = 1;
 let editingItem = null;
 
@@ -247,3 +247,29 @@ importCSV.addEventListener("change", (e) => {
 
   reader.readAsText(file);
 });
+
+//======================= Export Functionality =======================
+
+function exportToCSV() {
+  const items = [...list.querySelectorAll("li")];
+  const rows = items.map(li => {
+    const fields = [...li.querySelectorAll(".item-field")].map(f => f.textContent);
+    return fields.join(","); // join fields with commas
+  });
+
+  // Add CSV header if you want
+  const csvContent = rows.join("\n");
+
+  // Create a downloadable file
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "list_export.csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  
+}
+exportBtn.addEventListener("click", exportToCSV);
